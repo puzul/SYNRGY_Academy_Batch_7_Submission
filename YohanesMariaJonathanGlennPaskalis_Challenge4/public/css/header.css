@@ -1,0 +1,74 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 24px 0 24px;
+  border-radius: 0 0 12px 12px;
+  background-color: transparent;
+  /* background-color: #F1F3FF; */
+  transition: all 0.2s ease-in-out;
+  z-index: 1000;
+}
+
+.bg-translucent--black {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.container-navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 328px;
+}
+
+@media only screen and (min-width: 576px) {
+  .container-navbar {
+    width: 1168px;
+  }
+}
+
+.navbar-brand {
+  display: block;
+  width: 100px;
+  height: 38px;
+  background-color: #0D28A6;
+}
+
+.navbar-menu {
+  width: 440px;
+}
+
+.black-link {
+  font-size: 14px;
+  color: #000000;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.btn-register {
+  background-color: #5CB85F;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.btn-register:hover {
+  border: solid 1px #222222;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.btn-menu-toggle {
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.color--white {
+  color: #FFFFFF;
+}
+
+.btn-close--black {
+  stroke: #000000;
+}
+
+#offcanvasExampleLabel {
+  font-weight: 700;
+}

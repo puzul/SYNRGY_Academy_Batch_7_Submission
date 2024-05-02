@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Search Cars
+  </title>
+
+  <link href="./css/bootstrap/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/search-cars.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand position-fixed">
+      <div class="container-navbar">
+        <a class="navbar-brand" href="/">
+        </a>
+        <div class="navbar-menu d-none d-sm-block" id="navbarSupportedContent">
+          <ul class="navbar-nav justify-content-between align-items-center">
+            <li class="nav-item">
+              <a class="black-link nav-link-desktop-js" href="/#our-section">Our Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="black-link nav-link-desktop-js" href="/#why-us">Why Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="black-link nav-link-desktop-js" href="/#testimonial">Testimonial</a>
+            </li>
+            <li class="nav-item">
+              <a class="black-link nav-link-desktop-js" href="/#faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <button class="btn rounded-1 btn-register" href="#">Register</button>
+            </li>
+          </ul>
+        </div>
+        <button class="d-sm-none border-0 btn-menu-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <div class="offcanvas offcanvas-end gap-3 w-50 pt-5 ps-3 pe-4" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header p-0">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">BCR</h5>
+        <button type="button" class="btn-close opacity-100" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body p-0">
+        <ul class="navbar-nav flex-column gap-3">
+          <li class="nav-item">
+            <a class="black-link" href="#">Our Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="black-link" href="#">Why Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="black-link" href="#">Testimonial</a>
+          </li>
+          <li class="nav-item">
+            <a class="black-link" href="#">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn rounded-1 btn-register" href="#">Register</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="main">
+      <div class="container-main flex-column flex-sm-row">
+        <div class="main-text-div">
+          <h1>
+            Sewa & Rental Mobil Terbaik di kawasan Jakarta
+          </h1>
+          <p>
+            Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.
+          </p>
+        </div>
+        <div class="main-img-div">
+          <img src="./images/Foto_Mobil.png" alt="">
+          <div></div>
+        </div>
+        <form id="car-form" class="car-form d-flex justify-content-center align-items-end gap-3 p-4 rounded-2">
+          <div class="car-form-div d-flex justify-content-center align-items-end gap-3">
+            <div class="d-flex flex-column w-100">
+              <label for="driver-type" class="form-label car-form-label">Tipe Driver</label>
+              <select name="driver-type" id="driver-type" required class="form-select car-form-input">
+                <option value="" disabled selected>Pilih Tipe Driver</option>
+                <option value="true" class="valid-option">Dengan Sopir</option>
+                <option value="false" class="valid-option">Tanpa Sopir (Lepas Kunci)</option>
+              </select>
+            </div>
+            <div class="d-flex flex-column w-100">
+              <label for="date" class="form-label car-form-label">Tanggal</label>
+              <input placeholder="Pilih Tanngal"  onfocus="(this.type='date')" id="date" type="date" required class="form-control car-form-input"/>
+            </div>
+            <div class="d-flex flex-column w-100">
+              <label for="time" class="form-label car-form-label">Waktu Jemput/Ambil</label>
+              <input placeholder="Pilih Waktu" id="time" type="time" required class="form-control car-form-input"/>  
+            </div>
+            <div class="d-flex flex-column w-100">
+              <label for="car-seats" class="form-label car-form-label">Jumlah Penumpang (optional)</label>
+              <div class="car-seats-div">
+                <input placeholder="Jumlah Penumpang" nama="car-seats" id="car-seats" type="number" min="1" max="10" class="form-control car-form-input"/>  
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-cari rounded-1">Cari Mobil</button>
+        </form>
+      </div>
+    </section>
+    <section class="form-modal">
+    </section>
+    <section class="cars-result d-flex justify-content-center">
+      <div id="cars-container" class="cars-container">
+      </div>
+      <div id="not-found-card" class="not-found-card hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#721c24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>
+          Mobil Tidak Ditemukan
+        </span>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-div">
+      <div class="d-flex flex-column flex-sm-row justify-content-between">
+        <div class="footer-address">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="p-0">Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</a></li>
+            <li class="nav-item mb-2"><a href="#" class="p-0">binarcarrental@gmail.com</a></li>
+            <li class="nav-item mb-2"><a href="#" class="p-0">081-233-334-808</a></li>
+          </ul>
+        </div>
+        <div class="footer-menu">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="p-0">Our services</a></li>
+            <li class="nav-item mb-2"><a href="#" class="p-0">Why Us</a></li>
+            <li class="nav-item mb-2"><a href="#" class="p-0">Testimonial</a></li>
+            <li class="nav-item mb-2"><a href="#" class="p-0">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-social-media d-flex flex-column justify-content-start">
+          <h5>Connect with us</h5>
+          <ul class="nav">
+            <li class="nav-item mb-2">
+              <a href="/#our-section" class="nav-link p-0 text-muted">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="/#why-us" class="nav-link p-0 text-muted">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="/#testimonial" class="nav-link p-0 text-muted">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                </svg>
+              </a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="/#faq" class="nav-link p-0 text-muted">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-muted">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitch">
+                  <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-copyright d-flex flex-column justify-content-start">
+          <p>Copyright Binar 2022</p>
+          <a class="navbar-brand" href="#">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="./scripts/bootstrap/bootstrap.bundle.js"></script>
+  <script type="text/javascript" src="./scripts/Component.js"></script>
+  <script type="text/javascript" src="./scripts/Car.js"></script>
+  <script type="text/javascript" src="./scripts/Data.js"></script>
+  <script type="text/javascript" src="./scripts/App.js"></script>
+  <script>
+    const navbar = document.querySelector('.navbar');
+    const btnMenuToggle = document.querySelector('.btn-menu-toggle');
+    const navItemDesktop = document.querySelectorAll('.nav-link-desktop-js')
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= 1) {
+        navbar.classList.add('bg-translucent--black');
+        btnMenuToggle.classList.add('color--white');
+        navItemDesktop.forEach((item) => {
+          item.classList.add('color--white');
+        })
+      }
+      if (window.scrollY < 1) {
+        navbar.classList.remove('bg-translucent--black');
+        btnMenuToggle.classList.remove('color--white');
+        navItemDesktop.forEach((item) => {
+          item.classList.remove('color--white');
+        })
+      }
+    })
+
+    const carApp = new App();
+    // carApp.load();
+    const carForm = document.querySelector('#car-form');
+    const formDriverType = document.querySelector('#driver-type');
+    const formDate = document.querySelector('#date');
+    const formTime = document.querySelector('#time');
+    const formCarSeats = document.querySelector('#car-seats');
+    "Date: 2022-03-23"
+    "Time: 15:49:05.563"
+    "2022-03-23T15:49:05.563Z"
+    carForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      carApp.clear();
+      const formLocalDateAndTime = new Date(formDate.value + 'T' + formTime.value); 
+      const formUTCDateAndTime = formLocalDateAndTime.toISOString();
+      const filter = {
+        driverType: formDriverType.value === 'true' ? true : false,
+        dateAndTime: formUTCDateAndTime,
+        carSeats: formCarSeats.value ? parseInt(formCarSeats.value) : 0,
+      }
+      await carApp.load(filter);
+    })
+  </script>
+</body>
+</html>
