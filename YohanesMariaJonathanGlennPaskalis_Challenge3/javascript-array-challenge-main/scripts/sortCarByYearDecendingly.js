@@ -23,6 +23,9 @@ function sortCarByYearDescendingly(cars) {
     }
   }
 
+  console.log('Sorted Year', result.map((car) => car.year))
+
+
   console.log(result);
 
   // Rubah code ini dengan array hasil sorting secara descending
