@@ -114,11 +114,9 @@
               </div>
             </div>
           </div>
-          <button type="submit" class="btn btn-cari rounded-1">Cari Mobil</button>
+          <button id="btn-cari" type="submit" class="btn btn-cari rounded-1" disabled>Cari Mobil</button>
         </form>
       </div>
-    </section>
-    <section class="form-modal">
     </section>
     <section class="cars-result d-flex justify-content-center">
       <div id="cars-container" class="cars-container">
@@ -208,7 +206,7 @@
   <script>
     const navbar = document.querySelector('.navbar');
     const btnMenuToggle = document.querySelector('.btn-menu-toggle');
-    const navItemDesktop = document.querySelectorAll('.nav-link-desktop-js')
+    const navItemDesktop = document.querySelectorAll('.nav-link-desktop-js');
 
     window.addEventListener('scroll', () => {
       if (window.scrollY >= 1) {
@@ -228,15 +226,19 @@
     })
 
     const carApp = new App();
-    // carApp.load();
     const carForm = document.querySelector('#car-form');
     const formDriverType = document.querySelector('#driver-type');
     const formDate = document.querySelector('#date');
     const formTime = document.querySelector('#time');
     const formCarSeats = document.querySelector('#car-seats');
-    "Date: 2022-03-23"
-    "Time: 15:49:05.563"
-    "2022-03-23T15:49:05.563Z"
+    const searchBtn = document.querySelector('#btn-cari');
+    const checkRequiredValues = () => {
+      if (formDriverType.value && formDate.value && formTime.value) searchBtn.removeAttribute('disabled');
+      else searchBtn.setAttribute('disabled', 'disabled');
+    }
+    formCarSeats.addEventListener('change', checkRequiredValues)
+    formDate.addEventListener('change', checkRequiredValues)
+    formTime.addEventListener('change', checkRequiredValues)
     carForm.addEventListener('submit', async event => {
       event.preventDefault();
       carApp.clear();

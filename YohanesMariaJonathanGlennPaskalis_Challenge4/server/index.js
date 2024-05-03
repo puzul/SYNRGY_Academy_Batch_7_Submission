@@ -15,7 +15,6 @@ http.createServer((req, res) => {
   }
   const filePath = "public" + req.url;
     fs.readFile(filePath, (err, data) => {
-      console.log(filePath);
       if (err)
         res.writeHead(404);
       else if (path.extname(filePath)==='.svg')
