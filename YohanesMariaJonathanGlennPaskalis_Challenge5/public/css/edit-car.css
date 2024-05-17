@@ -1,0 +1,97 @@
+.control-section {
+  padding: 32px 0 0 32px;
+}
+
+.main-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 32px 0 0 32px;
+}
+
+.edit-car-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 300px;
+  width: 100%;
+}
+
+.edit-car-form-div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  width: 100%;
+  padding: 16px;
+  background-color: #FFFFFF;
+}
+
+.edit-car-form-div > div {
+  height: 36px;
+}
+
+.edit-car-form-div > div > label,
+.edit-car-form-div > div > span {
+  display: flex;
+  align-items: center;
+  width: 147px;
+  font-size: 12px;
+}
+
+.edit-car-form-div > div > label {
+  cursor: pointer;
+}
+
+.edit-car-form-div > div > input::placeholder { 
+  color: #8A8A8A;
+}
+
+.edit-car-form-div > div > input {
+  width: 339px;
+  padding: 9px 12px 9px 12px;
+  border: 1px solid #D0D0D0;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+.file-label {
+  display: flex;
+  align-items: center;
+  width: 339px !important;
+  padding: 9px 12px 9px 12px;
+  border: 1px solid #D0D0D0;
+  border-radius: 2px;
+  font-size: 12px;
+  color: #8A8A8A;
+}
+
+.cancel-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 87px;
+  height: 36px;
+  padding: 8px 12px 8px 12px;
+  border: 1px solid #0D28A6;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0D28A6;
+  text-decoration: none;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 87px;
+  height: 36px;
+  padding: 8px 12px 8px 12px;
+  border: 0;
+  border-radius: 2px;
+  background-color: #0D28A6;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+}

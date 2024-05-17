@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Dashboard
+    </title>
+
+    <link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+
+  </head>
+  <body>
+    <%- include('./partials/header_dashboard') %>
+    <main>
+      <section id="control" class="control-section">
+        <div>
+          Cars > Cars
+        </div>
+        <div class="d-flex justify-content-between">
+          <h2>Dashboard</h2>
+        </div>
+      </section>
+      <section id="main" class="main-section">
+        <div id="list-car">
+          <div class="container-main flex-column flex-sm-row">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>User Email</th>
+                  <th>Car</th>
+                  <th>Start Rent</th>
+                  <th>Finisih Rent</th>
+                  <th>Price</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for (let i=0; i<10; i++) {%>
+                  <tr>
+                    <td><%= i+1 %></td>
+                    <td>User Email</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                <% } %>
+              </tbody>
+            </table>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex">
+                <div class="d-flex flex-column gap-1">
+                  <span class="font-12px">Limit</span>
+                  <select name="" id="" disabled class="form-select">
+                    <option value="">10</option>
+                  </select>
+                </div>
+                <div class="d-flex flex-column gap-1">
+                  <span class="font-12px">Jump to page</span>
+                  <div class="d-flex">
+                    <select name="" id="" disabled  class="form-select">
+                      <option value="">1</option>
+                    </select>
+                    <button class="go-btn">Go</button>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a href="" class="page-link">&laquo;</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="">...</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="">9</a>
+                  </li>
+                  <li class="page-item">
+                    <a href="" class="page-link">&raquo;</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="list-car">
+          <div class="container-main flex-column flex-sm-row">
+            <table class="table">
+              <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Start Rent</th>
+                <th>Finisih Rent</th>
+                <th>Created at</th>
+                <th>Updated at</th>
+              </tr>
+              <% if (cars.length) { %>
+                <% cars.forEach((car, index) => { %>
+                  <tr>
+                    <td>
+                    <%= index %>
+                    </td>
+                    <td>
+                      <%= car.type %>
+                    </td>
+                    <td>Category</td>
+                    <td>
+                      <%= car.rentPerDay %>
+                    </td>
+                    <td></td>
+                    <td>-</td>
+                    <td>
+                      <%= car.createdAt.toLocaleString() %>
+                    </td>
+                    <td>
+                      <%= car.updatedAt.toLocaleString() %>
+                    </td>
+                  </tr>
+                <% }) %>
+              <% } %>
+            </table>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex">
+                <div class="d-flex flex-column gap-1">
+                  <span class="font-12px">Limit</span>
+                  <select name="" id="" disabled class="form-select">
+                    <option value="">10</option>
+                  </select>
+                </div>
+                <div class="d-flex flex-column gap-1">
+                  <span class="font-12px">Jump to page</span>
+                  <div class="d-flex">
+                    <select name="" id="" disabled  class="form-select">
+                      <option value="">1</option>
+                    </select>
+                    <button class="go-btn">Go</button>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a href="" class="page-link">&laquo;</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="">...</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="">9</a>
+                  </li>
+                  <li class="page-item">
+                    <a href="" class="page-link">&raquo;</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/scripts/bootstrap/bootstrap.bundle.js"></script>
+    <script>
+      const navbar = document.querySelector('.navbar');
+      const btnMenuToggle = document.querySelector('.btn-menu-toggle');
+      const navItemDesktop = document.querySelectorAll('.nav-link-desktop-js')
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY >= 1) {
+          navbar.classList.add('bg-translucent--black');
+          btnMenuToggle.classList.add('color--white');
+          navItemDesktop.forEach((item) => {
+            item.classList.add('color--white');
+          })
+        }
+        if (window.scrollY < 1) {
+          navbar.classList.remove('bg-translucent--black');
+          btnMenuToggle.classList.remove('color--white');
+          navItemDesktop.forEach((item) => {
+            item.classList.remove('color--white');
+          })
+        }
+      })
+    </script>
+  </body>
+</html>

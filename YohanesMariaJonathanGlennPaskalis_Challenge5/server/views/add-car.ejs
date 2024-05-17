@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Add Car
+    </title>
+
+    <link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/add-car.css">
+
+  </head>
+  <body>
+    <%- include('./partials/header_cars') %>
+    <main>
+      <section id="control" class="control-section">
+        <div>
+          Cars > Cars
+        </div>
+        <div class="d-flex justify-content-between">
+          <h2>List Cars</h2>
+        </div>
+      </section>
+      <section id="main" class="main-section">
+        <form action="/api/cars" id="add-car-form" method="post" enctype="multipart/form-data" class="add-car-form">
+          <div class="add-car-form-div">
+            <div class="d-flex">
+              <label for="type">Nama<span>*</span></label>
+              <input type="text" id="type" name="type" required placeholder="Placeholder">
+            </div>
+            <div class="d-flex">
+              <label for="rentPerDay">Harga<span>*</span></label>
+              <input type="number" id="rentPerDay" name="rentPerDay" required placeholder="Placeholder">
+            </div>
+            <div class="d-flex">
+              <span>Foto<span>*</span></span>
+              <label for="file" class="file-label">Placeholder</label>
+              <input type="file" id="file" name="file" required class="d-none">
+            </div>
+            <div class="d-flex">
+              <label for="">Start Rent</label>
+              <span>-</span>
+            </div>
+            <div class="d-flex">
+              <label for="">Finish Rent</label>
+              <span>-</span>
+            </div>
+            <div class="d-flex">
+              <label for="">Created at</label>
+              <span>-</span>
+            </div>
+            <div class="d-flex">
+              <label for="">Updated at</label>
+              <span>-</span>
+            </div>
+          </div>
+          <div class="d-flex gap-3">  
+            <a href="/cars" class="cancel-btn">Cancel</a>
+            <button type="submit" class="submit-btn">Save</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="/scripts/bootstrap/bootstrap.bundle.js"></script>
+    <script>
+      const navbar = document.querySelector('.navbar');
+      const btnMenuToggle = document.querySelector('.btn-menu-toggle');
+      const navItemDesktop = document.querySelectorAll('.nav-link-desktop-js')
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY >= 1) {
+          navbar.classList.add('bg-translucent--black');
+          btnMenuToggle.classList.add('color--white');
+          navItemDesktop.forEach((item) => {
+            item.classList.add('color--white');
+          })
+        }
+        if (window.scrollY < 1) {
+          navbar.classList.remove('bg-translucent--black');
+          btnMenuToggle.classList.remove('color--white');
+          navItemDesktop.forEach((item) => {
+            item.classList.remove('color--white');
+          })
+        }
+      })
+
+      const addCarForm = document.querySelector('#add-car-form');
+      // addCarForm.addEventListener('submit', event => {
+      //   event.preventDefault();
+      // })
+    </script>
+  </body>
+</html>

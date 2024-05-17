@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Cars
+    </title>
+
+    <link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/cars.css">
+
+  </head>
+  <body>
+    <%- include('./partials/header_cars') %>
+    <main>
+      <section id="control" class="control-section">
+        <div class="d-flex gap-1">
+          <span class="bold">Cars</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Cars</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <h2>List Cars</h2>
+          <a href="/add-car" class="add-car-link">Add New Car</a>
+        </div>
+        <div class="d-flex type-selection gap-2">
+          <button>
+            All
+          </button>
+          <button disabled>
+            Small
+          </button>
+          <button disabled>
+            Medium
+          </button>
+          <button disabled>
+            Large
+          </button>
+        </div>
+      </section>
+      <section id="main" class="main-section">
+        <div class="container-main">
+          <% if (cars.length) { %>
+            <% cars.forEach((car, index) => { %>
+              <div class="car-card">
+                <img src="<%=car.image %>" alt="" class="car-card-img">
+                <div class="d-flex flex-column gap-2">
+                  <p class="car-card-name"><%= car.type %></p>
+                  <p class="car-card-price"><%= `Rp ${car.rentPerDay} / hari` %></p>
+                </div>
+                <p>Start rent - Finished rent</p>
+                <p><%= `Updated at ${car.updatedAt.toLocaleString().slice(0,-3)}` %></p>
+                <div class="d-flex gap-3">
+                  <button id="btn-<%=car.id %>" class="delete-button">Delete</button>
+                  <a href="<%= `/edit-car/${car.id}` %>" class="update-link">Edit</a>
+                </div>
+              </div>
+            <% }) %>
+          <% } %>
+        </div>
+        <div id="delete-modal" class="delete-modal hide">
+          <form id="delete-form" action="" method="post">
+            <img src="/images/delete-form/Car_Image.png" alt="">
+            <div class="d-flex flex-column gap-3">
+              <span>
+                Menghapus Data Mobil
+              </span>
+              <p>
+                Setelah dihapus, data mobil tidak dapat dikembalikan. Yakin ingin menghapus?
+              </p>
+            </div>
+            <input type="hidden" name="_method" value="delete">
+            <div class="d-flex gap-3">
+              <button id="confirm-delete" type="submit">Ya</button>
+              <button id="cancel-delete">Tidak</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="/scripts/bootstrap/bootstrap.bundle.js"></script>
+    <script>
+      const deleteModal = document.querySelector('#delete-modal');
+      const deleteForm = document.querySelector('#delete-form');
+      const cancelBtn = document.querySelector('#cancel-delete');
+      cancelBtn.addEventListener('click', event => {
+        event.preventDefault();
+        deleteModal.classList.add('hide');
+        deleteForm.setAttribute('action', '');
+      })
+      document.querySelectorAll('.delete-button').forEach(button => {
+        button.addEventListener('click', () => {
+          deleteModal.classList.remove('hide');
+          deleteForm.setAttribute('action', `/api/cars/${button.id.slice(4)}`);
+        })
+      })
+      const navbar = document.querySelector('.navbar');
+      const btnMenuToggle = document.querySelector('.btn-menu-toggle');
+      const navItemDesktop = document.querySelectorAll('.nav-link-desktop-js')
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY >= 1) {
+          navbar.classList.add('bg-translucent--black');
+          btnMenuToggle.classList.add('color--white');
+          navItemDesktop.forEach((item) => {
+            item.classList.add('color--white');
+          })
+        }
+        if (window.scrollY < 1) {
+          navbar.classList.remove('bg-translucent--black');
+          btnMenuToggle.classList.remove('color--white');
+          navItemDesktop.forEach((item) => {
+            item.classList.remove('color--white');
+          })
+        }
+      })
+    </script>
+  </body>
+</html>
