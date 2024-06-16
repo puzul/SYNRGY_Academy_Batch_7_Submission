@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Helvetica';
+}
+
+/* Chrome, Safari, Edge, Opera */
+#car-seats::-webkit-outer-spin-button,
+#car-seats::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+#car-seats[type=number] {
+  -moz-appearance: textfield;
+}
